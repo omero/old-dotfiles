@@ -32,8 +32,10 @@ sudo betterlockscreen -u ~/Documents/Wallpapers/gruvbox.png
 picom --xrender-sync-fence &
 # Dunst
 dunst &
-# Dropbox
-dropbox &
+# Clipman
+xfce4-clipman &
+# Bluethoot
+blueman-applet &
 # Nm-applet
 nm-applet &
 

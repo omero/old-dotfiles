@@ -10,7 +10,7 @@ if [ "$choice" = "y" ]; then
     sudo pacman -S xf86-video-vmware virtualbox-guest-utils virtualbox-guest-modules-arch --noconfirm --needed
 fi
 
-sudo pacman -S xorg xorg-xinit feh rofi ranger bspwm sxhkd dunst vim neofetch python3 zsh noto-fonts noto-fonts-emoji chromium ttf-font-awesome otf-font-awesome pulseaudio pulseaudio-alsa pamixer unzip firefox picom wget make --noconfirm --needed
+sudo pacman -S feh rofi ranger bspwm sxhkd dunst vim neofetch python3 zsh noto-fonts noto-fonts-emoji brave ttf-font-awesome otf-font-awesome pulseaudio pulseaudio-alsa pamixer unzip firefox picom wget make alacritty patch --noconfirm --needed
 
 
 if pacman -Qs yay > /dev/null ; then
@@ -23,7 +23,7 @@ else
 fi
 
 
-yay -S polybar rxvt-unicode-256xresources spicetify-cli nerd-fonts-iosevka python-ueberzug spotify betterlockscreen --needed --removemake --nocleanmenu --nodiffmenu --noeditmenu --noconfirm
+yay -S polybar spicetify-cli nerd-fonts-iosevka nerd-fonts-cascadia-code spotify betterlockscreen direnv zoom slack-desktop visual-studio-code-bin --needed --removemake --nocleanmenu --nodiffmenu --noeditmenu --noconfirm
 
 
 # ====================================
@@ -67,7 +67,7 @@ sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended --keep-zshrc"
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-git clone https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git ~/.oh-my-zsh/custom/plugins/autoswitch_virtualenv
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 
 
 echo "=============="
