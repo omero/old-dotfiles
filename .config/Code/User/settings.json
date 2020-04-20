@@ -1,65 +1,30 @@
 {
-    "window.menuBarVisibility": "toggle",
-    "editor.fontFamily": "\"Iosevka\"",
-    "editor.lineNumbers": "relative",
-    "keyboard.dispatch": "keyCode",
-    "window.zoomLevel": 1,
-    "editor.rulers": [
-        80,
-        120
-    ],
-    "vim.useSystemClipboard": true,
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "explorer.confirmDelete": false,
-    "terminal.integrated.fontFamily": "Iosevka",
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "latexmk",
-            "tools": [
-                "latexmk"
-            ]
-        },
-        {
-            "name": "pdflatex -> bibtex -> pdflatex*2",
-            "tools": [
-                "pdflatex",
-            ]
-        }
-    ],
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "editor.minimap.enabled": false,
-    "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": false,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "window.titleBarStyle": "custom",
-    "workbench.iconTheme": "vscode-great-icons",
-    "emmet.syntaxProfiles": {
-        "javascript": "jsx",
-        "xml": {
-            "attr_quotes": "single"
-        }
-    },
+
+    "workbench.colorTheme": "SynthWave '84",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "CaskaydiaCove Nerd Font",
+    "editor.fontLigatures": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 0,
+    "editor.tabSize": 2,
+    "prettier.tabWidth": 2,
+    "workbench.iconTheme": "eq-material-theme-icons-palenight",
     "[javascript]": {
-        "editor.tabSize": 2
+        "editor.formatOnSave": true
     },
-    "[css]": {
-        "editor.tabSize": 2
+    "[json]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "extensions.autoUpdate": false,
-    "editor.acceptSuggestionOnCommitCharacter": false,
-    "coverage-gutters.coverageFileNames": [
-        "lcov.info",
-        "coverage.info",
-        "cov.xml",
-        "jacoco.xml"
-    ],
-    "FSharp.useSdkScripts": true,
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "[html]": {
+        "editor.formatOnSave": true
+    },
+    "emmet.includeLanguages":
+    {
+        "javascript": "javascriptreact",
+    },
+    "workbench.editor.showTabs": true,
+    "workbench.colorCustomizations": {},
+    "sync.gist": "b5fd942f021b16017606c47e487148ed",
 }

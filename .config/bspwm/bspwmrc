@@ -14,6 +14,9 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+bspc rule -a brave-browser desktop='^2' follow=on
+
+
 # --------------------------------
 # ------- Non-BSPWM related ------
 # --------------------------------
@@ -50,6 +53,6 @@ xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "libinput Disable While Typing E
 # Remap Caps-lock key to Escape, for using VIM
 setxkbmap -option caps:escape
 # Make US and DK keyboard layout togglable with Shift+Alt
-setxkbmap -layout us,dk -option grp:alt_shift_toggle
+setxkbmap -layout us,es -option grp:alt_shift_toggle
 
 

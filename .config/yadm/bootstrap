@@ -10,8 +10,22 @@ if [ "$choice" = "y" ]; then
     sudo pacman -S xf86-video-vmware virtualbox-guest-utils virtualbox-guest-modules-arch --noconfirm --needed
 fi
 
-sudo pacman -S feh rofi ranger bspwm sxhkd dunst vim neofetch python3 zsh noto-fonts noto-fonts-emoji brave ttf-font-awesome otf-font-awesome pulseaudio pulseaudio-alsa pamixer unzip firefox picom wget make alacritty patch --noconfirm --needed
+sudo pacman -S feh rofi ranger bspwm sxhkd dunst vim neofetch python3 zsh noto-fonts noto-fonts-emoji brave ttf-font-awesome otf-font-awesome pulseaudio pulseaudio-alsa pamixer unzip firefox picom wget make alacritty patch arandr yarn maim xclip kubectl qtile tree helm deepin-screenshot otf-overpass neovim jq --noconfirm --needed
 
+if command -v nvm > /dev/null ; then
+    echo "nvm is already installed, moving on..."
+else
+    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+fi
+
+if pacman -Qs docker > /dev/null ; then
+    echo "Docker is already installed, moving on..."
+else
+    sudo pacman -S docker --noconfirm --needed
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    sudo systemctl enable docker
+fi
 
 if pacman -Qs yay > /dev/null ; then
     echo "Yay is already installed, moving on..."
@@ -23,7 +37,7 @@ else
 fi
 
 
-yay -S polybar spicetify-cli nerd-fonts-iosevka nerd-fonts-cascadia-code spotify betterlockscreen direnv zoom slack-desktop visual-studio-code-bin --needed --removemake --nocleanmenu --nodiffmenu --noeditmenu --noconfirm
+yay -S polybar spicetify-cli nerd-fonts-cascadia-code spotify betterlockscreen direnv zoom slack-desktop visual-studio-code-bin google-cloud-sdk --needed --removemake --nocleanmenu --nodiffmenu --noeditmenu --noconfirm
 
 
 # ====================================
@@ -56,6 +70,8 @@ fc-cache -vf ~/.local/share/fonts/
 mkdir ~/.config/fontconfig
 mkdir ~/.config/fontconfig/conf.d
 mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+
+
 
 
 # Make pacman display colored output

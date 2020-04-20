@@ -8,10 +8,10 @@ super + Return
 
 # terminal emulator in same window as currently focused
 super + shift + Return
-	urxvt -cd "`xcwd`"
+	alacritty -cd "`xcwd`"
 
 # program launcher
-super + d
+super + space
 	rofi -modi run,drun -show drun -columns 1 -width 24 -lines 8 -padding 45 -hide-scrollbar -show-icons -drun-icon-theme "Papirus"
 
 # make sxhkd reload its configuration files:
@@ -20,7 +20,7 @@ super + Escape
 
 # Open sxhkdrc config file
 super F1
-	urxvt -e vim $HOME/.config/sxhkd/sxhkdrc
+	alacritty -e vim $HOME/.config/sxhkd/sxhkdrc
 
 #
 # bspwm hotkeys
@@ -144,13 +144,13 @@ super + alt + shift + {h,j,k,l}
 # ===================================
 
 super + w
-	chromium
+	brave
 
 super + r
-	urxvt -e ranger
+	alacritty -e ranger
 
 super + shift + r
-	urxvt -e sudo ranger
+	alacritty -e sudo ranger
 
 super + x
     sudo betterlockscreen -l
@@ -161,17 +161,18 @@ super + s
 super + shift + s
     spotify
 
-super + k
-    KeeWeb
-
 super + c
     code
 
-super + shift + i
-    imgur-screenshot
 
 super + ctrl + i
-    maim -s | xclip -selection clipboard -t image/png 
+    maim -s | xclip -selection clipboard -t image/png
+
+super + ctrl + z
+    xrandr --output DisplayPort-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off
+
+super + ctrl + x
+    xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output HDMI-A-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off
 
 # Screen brightness control
 XF86MonBrightnessDown
