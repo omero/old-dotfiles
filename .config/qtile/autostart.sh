@@ -3,6 +3,7 @@ feh --bg-fill ~/Pictures/Wallpapers/escape_velocity.jpg &
 # Reload .Xresources
 xrdb -load ~/.Xresources &
 # ------- Autostart apps ------
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Picom
 picom &
 # Dunst
