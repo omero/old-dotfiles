@@ -1,13 +1,3 @@
-#!/bin/bash
-#  ____ _____
-# |  _ \_   _|  Derek Taylor (DistroTube)
-# | | | || |    http://www.youtube.com/c/DistroTube
-# | |_| || |    http://www.gitlab.com/dwt1/
-# |____/ |_|
-#
-# Dmenu script for editing some of my more frequently edited config files.
-
-
 declare options=("alacritty
 bash
 bspwm
@@ -19,6 +9,7 @@ qtile
 sxhkd
 vim
 xresources
+yadm
 zsh
 quit")
 
@@ -37,7 +28,7 @@ case "$choice" in
 	bspwm)
 		choice="$HOME/.config/bspwm/bspwmrc"
 	;;
-	compton)
+	picom)
 		choice="$HOME/.config/picom.conf"
 	;;
 	dunst)
@@ -60,6 +51,9 @@ case "$choice" in
 	;;
 	xresources)
 		choice="$HOME/.Xresources"
+	;;
+	yadm)
+		choice="$HOME/.config/yadm/bootstrap"
 	;;
 	zsh)
 		choice="$HOME/.zshrc"
