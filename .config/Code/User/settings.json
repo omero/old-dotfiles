@@ -27,4 +27,5 @@
     "workbench.editor.showTabs": true,
     "workbench.colorCustomizations": {},
     "sync.gist": "b5fd942f021b16017606c47e487148ed",
+    "explorer.confirmDelete": false,
 }

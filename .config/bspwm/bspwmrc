@@ -4,8 +4,6 @@ sxhkd &
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
-bspc rule -a URxvt:scratchy sticky=on state=floating rectangle=widthxheight+Xoffset+Yoffset
-
 bspc config border_width         2
 bspc config border_radius         12
 bspc config window_gap           10
@@ -14,18 +12,19 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a brave-browser desktop='^2' follow=on
-
+bspc rule -a zoom state=floating desktop=^5
+bspc rule -a Slack desktop=^3
+bspc rule -a discord desktop=^3
 
 # --------------------------------
 # ------- Non-BSPWM related ------
 # --------------------------------
 # Set wallpaper
-feh --bg-fill ~/Documents/Wallpapers/gruvbox.png
+feh --bg-fill ~/Pictures/Wallpapers/escape_velocity.jpg &
 # Reload .Xresources
-xrdb -load ~/.Xresources
+xrdb -load ~/.Xresources &
 # Launch polybar
-~/.config/polybar/launch.sh
+~/.config/polybar/launch.sh &
 # Change from ugly 'X' cursor when hovering over background
 xsetroot -cursor_name left_ptr
 # Make betterlockscreen generate and cache a background image for locking
@@ -41,7 +40,7 @@ xfce4-clipman &
 blueman-applet &
 # Nm-applet
 nm-applet &
-
+pasystray &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # ------- Mouse/Touchpad fixes ------
 # Start libinput gestures
