@@ -114,7 +114,7 @@ super + x
    sudo betterlockscreen -l
 
 super + alt + s
-    deepin-screenshot
+    deepin-screen-recorder
 
 super + shift + m
     spotify
