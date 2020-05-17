@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# ====================================
+# Install packages
+# ====================================
+
+read -p 'Install virtualbox additions? (y/N): ' choice
+
+if [ "$choice" = "y" ]; then
+    sudo pacman -S xf86-video-vmware virtualbox-guest-utils virtualbox-guest-modules-arch --noconfirm --needed
+fi
+
+sudo pacman -S wget \
+	openssh \
+	feh \
+	rofi \
+	ranger \
+	bspwm \
+	sxhkd \
+	dunst \
+	neofetch \
+	python3 \
+	zsh \
+	noto-fonts \
+	noto-fonts-emoji \
+	ttf-font-awesome \
+	otf-font-awesome \
+	pulseaudio \
+	pulseaudio-alsa \
+	pulseaudio-bluetooth \
+	pamixer \
+	pavucontrol \
+	pasystray \
+	unzip \
+	firefox \
+	picom \
+	wget \
+	make \
+	alacritty \
+	patch \
+	arandr \
+	yarn \
+	kubectl \
+	tree \
+	helm \
+	deepin-screen-recorder \
+	neovim \
+	jq \
+	python-dbus \
+	nautilus \
+	filezilla \
+	rsync \
+	blueman \
+	polkit-gnome \
+	light \
+	--noconfirm --needed
+
+
