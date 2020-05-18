@@ -16,6 +16,7 @@ fi
 
 yay -S polybar \
 	nerd-fonts-cascadia-code \
+	nerd-fonts-fira-code \
 	spotify \
 	direnv \
 	zoom \
