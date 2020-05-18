@@ -4,9 +4,9 @@
 # Install packages
 # ====================================
 
-./pacman-packages
+sh $HOME/.config/yadm/pacman-packages
 
-./aur-packages
+sh $HOME/.config/yadm/aur-packages
 
 #if command -v nvm > /dev/null ; then
 #    echo "nvm is already installed, moving on..."

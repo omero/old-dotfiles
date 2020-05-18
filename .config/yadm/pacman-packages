@@ -53,6 +53,7 @@ sudo pacman -S wget \
 	blueman \
 	polkit-gnome \
 	light \
+	lxappearance \
 	--noconfirm --needed
 
 
