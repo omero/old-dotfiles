@@ -98,22 +98,22 @@ super + alt + ctrl + {Left,Down,Up,Right}
 # ========== User-specific ==========
 # ===================================
 
-super + alt + w
-	brave
+super + w
+	google-chrome-stable
 
-super + alt + r
+super + r
 	alacritty -e ranger
-
-super + alt + e
-	$HOME/.config/rofi/edit-configs.sh
 
 super + alt+ shift + r
 	alacritty -e sudo ranger
 
+super + e
+	$HOME/.config/rofi/edit-configs.sh
+
 super + x
    sudo betterlockscreen -l
 
-super + alt + s
+super + shift + s
     deepin-screen-recorder
 
 super + shift + m
