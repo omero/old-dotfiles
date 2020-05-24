@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# ====================================
+# NVM
+# ====================================
+
+echo "Installing NVM"
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+
+# ====================================
+# Docker
+# ====================================
+echo "Installing docker"
+if pacman -Qs docker > /dev/null ; then
+    echo "Docker is already installed, moving on..."
+else
+    sudo pacman -S docker --noconfirm --needed
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    sudo systemctl enable docker
+fi
+
+
+# ====================================
+# Circle ci cli
+# ====================================
+echo "Installing CircleCI local"
+curl -fLSs https://raw.githubusercontent.com/CircleCI-Public/circleci-cli/master/install.sh | sudo bash
+
+# ====================================
+# Lando
+# ====================================
+echo "Installing Lando"
+wget https://files.devwithlando.io/lando-stable.pacman
+sudo pacman -U lando-stable.pacman
+
+# ====================================
+# gcloud
+# ====================================
+echo "Installing gcloud SDK"
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-280.0.0-linux-x86_64.tar.gz
+tar zxvf $HOME/google-cloud-sdk-280.0.0-linux-x86_64.tar.gz $HOME/google-cloud-sdk
+sh $HOME/.google-cloud-sdk/install.sh

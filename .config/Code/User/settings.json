@@ -1,30 +1,69 @@
 {
+  "editor.fontSize": 14,
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontLigatures": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "explorer.confirmDragAndDrop": false,
+  "window.zoomLevel": 0,
+  "editor.tabSize": 2,
+  "prettier.tabWidth": 2,
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
 
-    "workbench.colorTheme": "SynthWave '84",
-    "editor.fontFamily": "CaskaydiaCove Nerd Font",
-    "editor.fontLigatures": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "explorer.confirmDragAndDrop": false,
-    "window.zoomLevel": 0,
-    "editor.tabSize": 2,
-    "prettier.tabWidth": 2,
-    "workbench.iconTheme": "eq-material-theme-icons-palenight",
-    "[javascript]": {
-        "editor.formatOnSave": true
-    },
-    "[json]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        "editor.formatOnSave": true
-    },
-    "emmet.includeLanguages":
-    {
-        "javascript": "javascriptreact",
-    },
-    "workbench.editor.showTabs": true,
-    "workbench.colorCustomizations": {},
-    "sync.gist": "b5fd942f021b16017606c47e487148ed",
-    "explorer.confirmDelete": false,
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "workbench.editor.showTabs": true,
+  "workbench.colorCustomizations": {},
+  "sync.gist": "b5fd942f021b16017606c47e487148ed",
+  "workbench.colorTheme": "SynthWave '84",
+
+  "editor.formatOnSave": true,
+  // turn it off for JS and JSX, we will do this via eslint
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  // tell the ESLint plugin to run on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  // Optional BUT IMPORTANT: If you have the prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already
+  "prettier.disableLanguages": ["javascript", "javascriptreact"],
+  "hediet.vscode-drawio.local-storage": {
+    ".drawio-config": {
+      "language": "",
+      "customFonts": [],
+      "libraries": "general;uml;er;bpmn;flowchart;basic;arrows2",
+      "customLibraries": ["L.scratchpad"],
+      "plugins": [],
+      "recentColors": [],
+      "formatWidth": "240",
+      "createTarget": false,
+      "pageFormat": {
+        "x": 0,
+        "y": 0,
+        "width": 850,
+        "height": 1100
+      },
+      "search": true,
+      "showStartScreen": true,
+      "gridColor": "#d0d0d0",
+      "darkGridColor": "#6e6e6e",
+      "autosave": true,
+      "resizeImages": null,
+      "openCounter": 0,
+      "version": 18,
+      "unit": 1,
+      "isRulerOn": false,
+      "ui": ""
+    }
+  }
 }

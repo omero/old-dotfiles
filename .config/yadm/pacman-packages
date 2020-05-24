@@ -54,6 +54,8 @@ sudo pacman -S wget \
 	polkit-gnome \
 	light \
 	lxappearance \
+	python-pynvim \
+	xsel \
 	--noconfirm --needed
 
 
