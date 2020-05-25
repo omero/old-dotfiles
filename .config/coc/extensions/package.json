@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "coc-docker": ">=0.2.1",
+    "coc-eslint": ">=1.2.7",
+    "coc-explorer": ">=0.7.6",
+    "coc-json": ">=1.2.6",
+    "coc-markdownlint": ">=1.4.0",
+    "coc-marketplace": ">=1.7.0",
+    "coc-snippets": ">=2.1.26",
+    "coc-yaml": ">=1.0.4"
+  }
+}
