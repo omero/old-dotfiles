@@ -4,9 +4,9 @@
 # Install packages
 # ====================================
 
-sh $HOME/.config/yadm/pacman-packages
+# sh $HOME/.config/yadm/pacman-packages
 
-sh $HOME/.config/yadm/aur-packages
+# sh $HOME/.config/yadm/aur-packages
 
 #if command -v nvm > /dev/null ; then
 #    echo "nvm is already installed, moving on..."
@@ -60,7 +60,7 @@ mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 
 
 # Make pacman display colored output
-sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
+# sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
 
 # =========================================
 # Install oh my zsh and zsh-autosuggestions
