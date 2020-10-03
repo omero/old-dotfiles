@@ -7,7 +7,7 @@
   "window.zoomLevel": 0,
   "editor.tabSize": 2,
   "prettier.tabWidth": 2,
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.iconTheme": "Monokai Pro Icons",
 
   "[json]": {
     "editor.formatOnSave": true
@@ -21,7 +21,7 @@
   "workbench.editor.showTabs": true,
   "workbench.colorCustomizations": {},
   "sync.gist": "b5fd942f021b16017606c47e487148ed",
-  "workbench.colorTheme": "SynthWave '84",
+  "workbench.colorTheme": "Monokai Pro",
 
   "editor.formatOnSave": true,
   // turn it off for JS and JSX, we will do this via eslint
