@@ -114,8 +114,8 @@ eval "$(direnv hook zsh)"
 export BROWSER=google-chrome-stable
 
 # go variables
-export GOPATH=~/projects/goworkspace
-export PATH=~/projects/goworkspace/bin:$PATH
+export GOPATH=~/projects/go
+export PATH=~/projects/go/bin:$PATH
 
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}"  ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -136,6 +136,30 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-  PATH="/home/omers/terminus/vendor/bin:$PATH"
+# General pantheon configs
+# Terminus path
+export PATH=$HOME/.terminus/vendor/bin:$PATH
+export PATH=$HOME/terminus/vendor/bin:$PATH
+#Internal pantheon configs
 
-  export PANTHEON_CERT="$HOME/certs/omar.aguirre@getpantheon.com.pem"
+# Cert
+export PANTHEON_CERT="$HOME/certs/omar.aguirre@getpantheon.com.pem"
+#SSH 
+# We only want to run gpg-agent on our local workstation. We accomplish that by trying to
+# detect if this shell was spawned from ssh or not. If the SSH_CLIENT env var is set, then
+# this is probably a remote login and we don't want to run gpg-agent.
+ 
+eval $(ssh-agent)
+if [ ! -n "$SSH_CLIENT" ]; then
+  gpgconf --launch gpg-agent
+   
+  if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+      export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+  fi
+ 
+  GPG_TTY=$(tty)
+  export GPG_TTY
+  # only necessary if using pinentry in the tty (instead of GUI)
+  echo UPDATESTARTUPTTY | gpg-connect-agent > /dev/null 2>&1
+fi
+
