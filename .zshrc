@@ -114,8 +114,9 @@ eval "$(direnv hook zsh)"
 export BROWSER=google-chrome-stable
 
 # go variables
-export GOPATH=~/projects/go
-export PATH=~/projects/go/bin:$PATH
+export GOPATH=~/go
+export PATH=~/go/bin:$PATH
+export KO_DOCKER_REPO="quay.io/omero"
 
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}"  ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
