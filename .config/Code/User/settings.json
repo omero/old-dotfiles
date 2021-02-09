@@ -1,14 +1,13 @@
 {
   "editor.fontSize": 14,
   "editor.fontFamily": "FiraCode Nerd Font",
-  "editor.fontLigatures": true,
+  "editor.fontLigatures": false,
   "workbench.startupEditor": "newUntitledFile",
   "explorer.confirmDragAndDrop": false,
   "window.zoomLevel": 0,
   "editor.tabSize": 2,
   "prettier.tabWidth": 2,
   "workbench.iconTheme": "Monokai Pro Icons",
-
   "[json]": {
     "editor.formatOnSave": true
   },
@@ -22,7 +21,6 @@
   "workbench.colorCustomizations": {},
   "sync.gist": "b5fd942f021b16017606c47e487148ed",
   "workbench.colorTheme": "Monokai Pro",
-
   "editor.formatOnSave": true,
   // turn it off for JS and JSX, we will do this via eslint
   "[javascript]": {
@@ -36,13 +34,18 @@
     "source.fixAll": true
   },
   // Optional BUT IMPORTANT: If you have the prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already
-  "prettier.disableLanguages": ["javascript", "javascriptreact"],
+  "prettier.disableLanguages": [
+    "javascript",
+    "javascriptreact"
+  ],
   "hediet.vscode-drawio.local-storage": {
     ".drawio-config": {
       "language": "",
       "customFonts": [],
       "libraries": "general;uml;er;bpmn;flowchart;basic;arrows2",
-      "customLibraries": ["L.scratchpad"],
+      "customLibraries": [
+        "L.scratchpad"
+      ],
       "plugins": [],
       "recentColors": [],
       "formatWidth": "240",
@@ -66,5 +69,27 @@
       "ui": ""
     }
   },
-  "go.useLanguageServer": true
+  "go.useLanguageServer": true,
+  "go.lintTool": "golangci-lint",
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+    },
+    // Optional: Disable snippets, as they conflict with completion ranking.
+    // issue: 39207
+    "editor.snippetSuggestions": "none",
+  },
+  "[go.mod]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+    },
+  },
+  // Static checks out of gopls support, for that
+  // we'll use golangci-lint
+  "gopls": {
+    "usePlaceholders": true,
+    "staticcheck": false,
+  },
 }
