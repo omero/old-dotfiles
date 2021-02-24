@@ -135,3 +135,5 @@
 
 [url "git@github.com:"]
     insteadof = github:
+[pull]
+	rebase = false
