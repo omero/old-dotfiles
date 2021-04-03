@@ -132,11 +132,6 @@ source <(kubectl completion zsh)
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# fix tilix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
-
 # General pantheon configs
 # Terminus path
 export PATH=$HOME/.terminus/vendor/bin:$PATH
@@ -164,3 +159,5 @@ if [ ! -n "$SSH_CLIENT" ]; then
   echo UPDATESTARTUPTTY | gpg-connect-agent > /dev/null 2>&1
 fi
 
+# Setup rustup, cargo path
+[[ -f /home/omers/.rustrc ]] && source /home/omers/.rustrc
