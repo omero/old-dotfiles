@@ -137,4 +137,7 @@
 [url "git@github.com:"]
     insteadof = github:
 [pull]
-	rebase = false
+    rebase = false
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/   

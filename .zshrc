@@ -164,3 +164,4 @@ fi
 # Setup rustup, cargo path
 [[ -f /home/omers/.rustrc ]] && source /home/omers/.rustrc
 
+export GOPRIVATE=github.com/pantheon-systems/*
