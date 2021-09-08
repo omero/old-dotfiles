@@ -10,8 +10,13 @@ setopt hist_expire_dups_first
 setopt inc_append_history
 
 
+source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 alias vim="nvim"
 eval "$(direnv hook zsh)"
+
+#pip variables
+export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
 
 # go variables
 export GOPATH=~/go
@@ -22,7 +27,7 @@ export KO_DOCKER_REPO="quay.io/omero"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}"  ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-source <(/home/omers/.google-cloud-sdk/bin/kubectl completion zsh)
+#source <(${HOME}/.google-cloud-sdk/bin/kubectl completion zsh)
 
 #Internal pantheon configs
 # Cert
@@ -43,9 +48,8 @@ if [ ! -n "$SSH_CLIENT" ]; then
   # only necessary if using pinentry in the tty (instead of GUI)
   echo UPDATESTARTUPTTY | gpg-connect-agent > /dev/null 2>&1
 fi
-
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/omers/.google-cloud-sdk/path.zsh.inc' ]; then . '/home/omers/.google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/omers/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/omers/.google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/omers/.google-cloud-sdk/completion.zsh.inc' ]; then . '/home/omers/.google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/omers/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/omers/.google-cloud-sdk/completion.zsh.inc'; fi
