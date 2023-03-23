@@ -185,3 +185,7 @@ add_efi_memmap rw quiet splash i915.modeset=1 nouveau.modeset=0 acpi_rev_overrid
 - `acpi_rev_override=1`: This is the most important setting, as this prevents some freezing issues I had due to the nvidia card not working well with ACPI.
 - `quiet` and `splash`: Personal preference to not show every boot message at boot (I'd just remove these if something seems wrong)
 - `add_efi_memmap` and `rw`: Probably not needed anymore and `rw` are usually default anyways.
+
+
+
+jiodsjidiosa
