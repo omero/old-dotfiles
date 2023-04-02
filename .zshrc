@@ -12,34 +12,21 @@ setopt inc_append_history
 
 source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-alias vim="nvim"
+# direnv
 eval "$(direnv hook zsh)"
 
-#pip variables
-export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
+# golang
+export GOPATH="$HOME/.go"; export GOROOT="$HOME/.local/share/go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 
-# go variables
-export GOPATH=~/go
-PATH=${PATH}:${GOPATH}/bin
-export PATH=$PATH:/usr/local/go/bin
-export KO_DOCKER_REPO="quay.io/omero"
+# alias exa 
+alias ls="exa --icons --group-directories-first --time-style=long-iso --git"
+alias tree="exa --tree --icons"
 
 # nvm
-#export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}"  ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-#[ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
 export NVM_DIR="$HOME/.nvm"
     [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
-#    [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
-#source <(${HOME}/.google-cloud-sdk/bin/kubectl completion zsh)
-
-#Internal pantheon configs
-# Cert
-export PANTHEON_CERT="$HOME/certs/omar.aguirre@getpantheon.com.pem"
-
-export GOPRIVATE=github.com/pantheon-systems/*
-
+# ssh agent to use gpg
 eval $(ssh-agent)
 if [ ! -n "$SSH_CLIENT" ]; then
   gpgconf --launch gpg-agent
@@ -53,8 +40,14 @@ if [ ! -n "$SSH_CLIENT" ]; then
   # only necessary if using pinentry in the tty (instead of GUI)
   echo UPDATESTARTUPTTY | gpg-connect-agent > /dev/null 2>&1
 fi
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/omers/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/omers/.google-cloud-sdk/path.zsh.inc'; fi
 
+# gcp
+# The next line updates PATH for the Google Cloud SDK.
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/omers/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/omers/.google-cloud-sdk/completion.zsh.inc'; fi
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+
+export PATH=${PATH}:${HOME}/.bin
+export PATH=${PATH}:${HOME}/.local/bin
+
