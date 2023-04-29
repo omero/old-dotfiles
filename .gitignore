@@ -4,3 +4,6 @@
 
 # Editor specific files and folders
 .idea
+
+# act files
+.act*

@@ -7,7 +7,10 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: xterm-256color
+  TERM: alacritty
+
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
 
 window:
   # Spread additional padding evenly around the terminal content.
@@ -20,9 +23,9 @@ window:
   startup_mode: Windowed
   # Dimensions if not SimpleFullscreen
   dimensions:
-    columns: 140
-    lines: 38
-  opacity: 0.9
+    columns: 180
+    lines: 50
+  opacity: 0.95
 
   #cursor:
   # Block Underline or Beam
@@ -31,7 +34,8 @@ window:
 font:
   normal:
     # Needs to be powerline font if using zsh theme with powerline
-    family: FiraCode Nerd Font Mono
+    # family: FiraCode Nerd Font Mono
+    family: Liga SFMono Nerd Font
   # Font size
   size: 16
 
@@ -40,34 +44,34 @@ font:
 
 # Colors (Hyper)
 
-colors:
-  # Default colors
-  primary:
-    background: '0x292d3e'
-    foreground: '0xd0d0d0'
-
-  # Normal colors
-  normal:
-    black:   '0x292d3e'
-    red:     '0xf07178'
-    green:   '0xc3e88d'
-    yellow:  '0xffcb6b'
-    blue:    '0x82aaff'
-    magenta: '0xc792ea'
-    cyan:    '0x89ddff'
-    white:   '0xd0d0d0'
-
-  # Bright colors
-  bright:
-    black:   '0x434758'
-    red:     '0xff8b92'
-    green:   '0xddffa7'
-    yellow:  '0xffe585'
-    blue:    '0x9cc4ff'
-    magenta: '0xe1acff'
-    cyan:    '0xa3f7ff'
-    white:   '0xffffff'
-
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x292d3e'
+#     foreground: '0xd0d0d0'
+#
+#   # Normal colors
+#   normal:
+#     black:   '0x292d3e'
+#     red:     '0xf07178'
+#     green:   '0xc3e88d'
+#     yellow:  '0xffcb6b'
+#     blue:    '0x82aaff'
+#     magenta: '0xc792ea'
+#     cyan:    '0x89ddff'
+#     white:   '0xd0d0d0'
+#
+#   # Bright colors
+#   bright:
+#     black:   '0x434758'
+#     red:     '0xff8b92'
+#     green:   '0xddffa7'
+#     yellow:  '0xffe585'
+#     blue:    '0x9cc4ff'
+#     magenta: '0xe1acff'
+#     cyan:    '0xa3f7ff'
+#     white:   '0xffffff'
+#
 selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
@@ -84,3 +88,25 @@ shell:
 
 # Startup directory, unset or None for home directory
 working_directory: None
+key_bindings:
+  # (macOS only)
+  #- { key: K,              mods: Command, mode: ~Vi|~Search, chars: "\x0c"                 }
+  #- { key: K,              mods: Command, mode: ~Vi|~Search, action: ClearHistory          }
+  - { key: Key0,           mods: Command,                    action: ResetFontSize         }
+  - { key: Equals,         mods: Command,                    action: IncreaseFontSize      }
+  - { key: Plus,           mods: Command,                    action: IncreaseFontSize      }
+  - { key: NumpadAdd,      mods: Command,                    action: IncreaseFontSize      }
+  - { key: Minus,          mods: Command,                    action: DecreaseFontSize      }
+  - { key: NumpadSubtract, mods: Command,                    action: DecreaseFontSize      }
+  #- { key: V,              mods: Command,                    action: Paste                 }
+  #- { key: C,              mods: Command,                    action: Copy                  }
+  #- { key: C,              mods: Command, mode: Vi|~Search,  action: ClearSelection        }
+  #- { key: H,              mods: Command,                    action: Hide                  }
+  #- { key: H,              mods: Command|Alt,                action: HideOtherApplications }
+  #- { key: M,              mods: Command,                    action: Minimize              }
+  #- { key: Q,              mods: Command,                    action: Quit                  }
+  #- { key: W,              mods: Command,                    action: Quit                  }
+  #- { key: N,              mods: Command,                    action: CreateNewWindow       }
+  #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
+  #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
+  #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
