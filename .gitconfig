@@ -134,10 +134,12 @@
 [push]
     default = matching
 
-[url "git@github.com:"]
-    insteadof = github:
-[pull]
-    rebase = false
-
-[url "git@github.com:"]
+; [url "git@github.com:"]
+;     insteadof = github:
+; [pull]
+;     rebase = false
+;
+; [url "git@github.com:"]
     insteadOf = https://github.com/   
+[pull]
+	ff = only

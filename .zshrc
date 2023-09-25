@@ -82,5 +82,5 @@ source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 export PATH=${PATH}:${HOME}/.bin
 export PATH=${PATH}:${HOME}/.local/bin
 
-
+export USE_GKE_GCLOUD_AUTH_PLUGIN=true
 
