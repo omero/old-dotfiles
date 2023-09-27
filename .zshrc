@@ -67,8 +67,8 @@ alias tn="t new -s"
 export GOPATH="$HOME/.go"; export GOROOT="$HOME/.local/share/go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 
 # alias exa 
-alias ls="exa --icons --group-directories-first --time-style=long-iso --git"
-alias tree="exa --tree --icons"
+alias ls="eza --icons --group-directories-first --time-style=long-iso --git"
+alias tree="eza --tree --icons"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
