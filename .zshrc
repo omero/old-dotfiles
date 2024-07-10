@@ -11,6 +11,7 @@ then
   compinit
 fi
 
+export EDITOR=nvim
 
 # ssh agent to use gpg
 eval $(ssh-agent)
@@ -56,12 +57,6 @@ source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # direnv
 eval "$(direnv hook zsh)"
-
-# tmux aliases
-alias t="tmux"
-alias ta="t a -t"
-alias tls="t ls"
-alias tn="t new -s"
 
 # golang
 export GOPATH="$HOME/.go"; export GOROOT="$HOME/.local/share/go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
